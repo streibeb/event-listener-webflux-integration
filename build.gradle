@@ -16,7 +16,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-logging'
 	implementation 'org.springframework.boot:spring-boot-starter-tomcat'
 	implementation ('org.springframework.boot:spring-boot-starter-webflux') {
-//		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-reactor-netty'
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-reactor-netty'
 	}
 	implementation 'org.springframework.integration:spring-integration-core'
 	implementation 'org.springframework.integration:spring-integration-event'
@@ -30,6 +30,8 @@ dependencies {
 	testImplementation 'io.projectreactor:reactor-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-reactor-netty'
 
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
 }
 
 test {
